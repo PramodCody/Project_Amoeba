@@ -1,6 +1,7 @@
 #include "Line.h"
 #include <SDL3/SDL.h>
-#include <iostream>
+
+void check( );
 
 //To Calculate The GridLines Position
 int countR = 0;
@@ -53,6 +54,7 @@ void InitialBG() {
     for (int i = 0; i <= nh; i++) {
         Lh[i].draw_line(0, (i + 1) * b, w, (i + 1) * b);
     }
+
 }
 
 //Checking right condition to spawn a new line in X or Y axis
@@ -117,6 +119,8 @@ void UpdateGrid() {
     for (int i = 0; i <= nh; i++) {
         Lh[i].draw_line(Lh[i].x1, Lh[i].y1, Lh[i].x2, Lh[i].y2);
     }
+
+    check( );
 
     SDL_RenderPresent(renderer);
 }

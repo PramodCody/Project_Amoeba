@@ -2,6 +2,7 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 #include "Line.h"
+#include "graphics.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ void MoveRight();
 void MoveLeft();
 void MoveUp();
 void MoveDown();
+
 
 
 //Creating Window and Renderer
@@ -33,6 +35,7 @@ int main(int argc, char* argv[]) {
     //For Initial Grid
     InitialBG();
     UpdateGrid();
+
 
     //Keep Running
     bool running = true;

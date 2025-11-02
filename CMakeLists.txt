@@ -13,6 +13,8 @@ add_subdirectory("/home/desktoppramod/SDL3/SDL" SDL3_build)
 set(SOURCES
         main.cpp
         GridLines.cpp
+        graphics.cpp
+        graphics.h
         # Add more .cpp files here as needed
 )
 
