@@ -2,7 +2,6 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 #include "Line.h"
-#include "graphics.h"
 
 using namespace std;
 
@@ -22,7 +21,7 @@ void MoveDown();
 
 //Creating Window and Renderer
 float w = 400, h = 300;
-SDL_Window* window = SDL_CreateWindow("Project-Amoeba", w, h, SDL_WINDOW_RESIZABLE);
+SDL_Window* window = SDL_CreateWindow("Project_Amoeba", w, h, SDL_WINDOW_RESIZABLE);
 SDL_Renderer* renderer = SDL_CreateRenderer(window, nullptr);
 
 
