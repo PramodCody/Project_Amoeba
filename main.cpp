@@ -7,7 +7,6 @@ using namespace std;
 
 //The Functions from GridLines.cpp
 void InitialBG();
-void ResizedValue();
 void UpdateGrid();
 
 //the movements function from GridLines.cpp
@@ -20,8 +19,9 @@ void MoveDown();
 
 
 //Creating Window and Renderer
+int width, height;
 float w = 400, h = 300;
-SDL_Window* window = SDL_CreateWindow("Project_Amoeba", w, h, SDL_WINDOW_RESIZABLE);
+SDL_Window* window = SDL_CreateWindow("Project_Amoeba", w, h, SDL_WINDOW_FULLSCREEN);
 SDL_Renderer* renderer = SDL_CreateRenderer(window, nullptr);
 
 
@@ -30,6 +30,12 @@ int main(int argc, char* argv[]) {
     if (!SDL_Init(SDL_INIT_VIDEO)) {
         return -1;
     }
+
+	
+	SDL_GetWindowSize(window, &width, &height);
+	//w & h needs to be float for accurate division in Line.cpp
+	w = width;
+	h = height;
 
     //For Initial Grid
     InitialBG();
@@ -45,16 +51,11 @@ int main(int argc, char* argv[]) {
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
 
-                case SDL_EVENT_WINDOW_RESIZED:
-                    w = event.window.data1;
-                    h = event.window.data2;
-                    InitialBG();
-                    ResizedValue();
-                    UpdateGrid();
-                    break;
-
-                case SDL_EVENT_QUIT:
-                    running = false;
+                case SDL_EVENT_KEY_DOWN:
+                    if (event.key.key == SDLK_F4 && (event.key.mod & SDL_KMOD_ALT)) {
+                        running = false;
+                    }
+                    
                     break;
             }
         }

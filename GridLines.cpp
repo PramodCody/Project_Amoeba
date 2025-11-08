@@ -87,22 +87,6 @@ void CheckInfiniteCondition() {
     }
 }
 
-//Resized Lines New Position Calculation
-void ResizedValue() {
-
-    //vertical lines
-    for (int i = 0; i <= nv; i++) {
-        Lv[i].x1 -= countR * m;
-        Lv[i].x2 -= countR * m;
-    }
-
-    //horizental lines
-    for (int i = 0; i <= nh; i++) {
-        Lh[i].y1 += countU * m;
-        Lh[i].y2 += countU * m;
-    }
-}
-
 //TO Update Line Coordinates
 void UpdateGrid() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
