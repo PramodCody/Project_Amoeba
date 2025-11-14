@@ -1,5 +1,8 @@
-#include "Line.h"
+#include "line.h"
+#include "Graphics.h"
 #include <SDL3/SDL.h>
+
+
 
 //To Calculate The GridLines Position
 int countR = 0;
@@ -101,6 +104,14 @@ void UpdateGrid() {
     for (int i = 0; i <= nh; i++) {
         Lh[i].draw_line(Lh[i].x1, Lh[i].y1, Lh[i].x2, Lh[i].y2);
     }
+
+	Graphics g;
+	g.SetInitialPosition(w / 2, h / 2);
+	g.DrawRect(0);
+	g.DrawRect(1);
+	g.DrawRect(2);
+
+
 
     SDL_RenderPresent(renderer);
 }
